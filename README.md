@@ -368,17 +368,13 @@ Update macro-nutrients for some ingredients then isbn for some books.
 -   [TRUNCATE](https://www.postgresql.org/docs/9.6/static/sql-truncate.html) -
     detailed documentation of PostgreSQL's `TRUNCATE` command.
 
-### Demonstration: DELETE
-
-We'll remove a few books from the database.
-
-Note, `TRUNCATE <table name>;` is functionally equivalent to `DELETE FROM <table
-name>;`, it will remove all the rows from the table.
-
 #### Code along: DELETE
 
 Let's remove the patients who's given and family names start with the same
 letter.
+
+Note, `TRUNCATE <table name>;` is functionally equivalent to `DELETE FROM <table
+name>;`, it will remove all the rows from the table.
 
 #### Lab: DELETE
 
