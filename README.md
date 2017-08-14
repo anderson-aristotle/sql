@@ -229,7 +229,7 @@ for the column names.
 What data-types should we use for each column?
 
 We'll save the SQL statement to create the books table in
-`scripts/library/create_table_books.sql`. We can execute the commands in the
+`scripts/library/000_create_table_books.sql`. We can execute the commands in the
 file using `psql --file=filename <file>` or from the psql prompt using `\i
 <file>`.
 
@@ -368,17 +368,13 @@ Update macro-nutrients for some ingredients then isbn for some books.
 -   [TRUNCATE](https://www.postgresql.org/docs/9.6/static/sql-truncate.html) -
     detailed documentation of PostgreSQL's `TRUNCATE` command.
 
-### Demonstration: DELETE
-
-We'll remove a few books from the database.
-
-Note, `TRUNCATE <table name>;` is functionally equivalent to `DELETE FROM <table
-name>;`, it will remove all the rows from the table.
-
 #### Code along: DELETE
 
 Let's remove the patients who's given and family names start with the same
 letter.
+
+Note, `TRUNCATE <table name>;` is functionally equivalent to `DELETE FROM <table
+name>;`, it will remove all the rows from the table.
 
 #### Lab: DELETE
 
@@ -387,6 +383,7 @@ Remove ingredients you wouldn't keep in your kitchen or pantry.
 ## Additional Resources
 
 -   [SQL Wikipedia article](https://en.wikipedia.org/wiki/SQL)
+-   [Books.csv source](https://en.wikipedia.org/wiki/List_of_best-selling_books#List_of_best-selling_single-volume_books)
 
 ## [License](LICENSE)
 
