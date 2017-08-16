@@ -383,7 +383,7 @@ Remove ingredients you wouldn't keep in your kitchen or pantry.
 ## Additional Resources
 
 -   [SQL Wikipedia article](https://en.wikipedia.org/wiki/SQL)
--   [Books.csv source](https://en.wikipedia.org/wiki/List_of_best-selling_books#List_of_best-selling_single-volume_books)
+-   [Books.csv source] (https://en.wikipedia.org/wiki/List_of_best-selling_books#List_of_best-selling_single-volume_books)
 
 ## [License](LICENSE)
 
