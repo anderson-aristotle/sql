@@ -9,7 +9,7 @@
 
 ## Objectives
 
-By the end of this talk, developers should be able to:
+By the end of this, developers should be able to:
 
 -   Create a database table
 -   Insert a row or rows into a database table
