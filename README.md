@@ -5,11 +5,11 @@
 ## Prerequisites
 
 -   A working **[PostgreSQL](https://www.postgresql.org/)** installation.
--   [SQL Study](https://github.com/ga-wdi-boston/sql-study)
+-   [SQL Study](https://git.generalassemb.ly/ga-wdi-boston/sql-study)
 
 ## Objectives
 
-By the end of this talk, developers should be able to:
+By the end of this, developers should be able to:
 
 -   Create a database table
 -   Insert a row or rows into a database table
@@ -21,7 +21,7 @@ By the end of this talk, developers should be able to:
 ## Preparation
 
 1.  Fork and clone this repository.
-    [FAQ](https://github.com/ga-wdi-boston/meta/wiki/ForkAndClone)
+    [FAQ](https://git.generalassemb.ly/ga-wdi-boston/meta/wiki/ForkAndClone)
 1.  Create a new branch, `training`, for your work.
 1.  Checkout to the `training` branch.
 1.  Install dependencies.
