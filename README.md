@@ -230,8 +230,8 @@ What data-types should we use for each column?
 
 We'll save the SQL statement to create the books table in
 `scripts/library/000_create_table_books.sql`. We can execute the commands in the
-file using `psql --file=<path-to-file>` or from the psql prompt using `\i
-<file>`.
+file using `psql <db-name> --file=<path-to-file>` or from the psql prompt using
+`\i <file>`.
 
 ### Code along: CREATE TABLE
 
