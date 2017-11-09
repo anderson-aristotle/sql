@@ -230,7 +230,7 @@ What data-types should we use for each column?
 
 We'll save the SQL statement to create the books table in
 `scripts/library/000_create_table_books.sql`. We can execute the commands in the
-file using `psql --file=filename <file>` or from the psql prompt using `\i
+file using `psql --file=<path-to-file>` or from the psql prompt using `\i
 <file>`.
 
 ### Code along: CREATE TABLE
@@ -247,9 +247,6 @@ We'll save the statement in `scripts/clinic/000_create_table_patients.sql`
 Create a table to hold information about ingredients. Use the first row of
 `data/ingredients.csv` for the names of the columns other than `id`. Use
 `scripts/cookbook/000_create_table_ingredients.sql` to store the SQL statement.
-
-Once you've created the table `ingredients`, create the table `books` from the
-demonstration.
 
 ## Adding Rows to a Table
 
@@ -291,9 +288,6 @@ Together we'll add a few rows to patients then we'll bulk load
 Add an ingredient to the `ingredients` table using `INSERT` then bulk load
 `data/ingredients.csv`.
 
-Next add a book to the `books` table using `INSERT`, then bulk load
-`data/books.csv`.
-
 ## Retrieving rows from a table
 
 This is about the _query_ part of Structured _Query_ Language. Query statements
@@ -317,8 +311,6 @@ Together we'll build a query to get the count of patients by gender.
 
 Write a query to get the count of ingredients by unit.
 
-Then write a query to count books by author.
-
 ## Changing the Structure of a Table
 
 -   [Modifying Tables](https://www.postgresql.org/docs/9.6/static/ddl-alter.html)
@@ -337,8 +329,7 @@ We'll change the type of the columns `height` and `weight` in patients.
 
 ### Lab: ALTER TABLE
 
-Add columns for macro-nutrients to ingredients then add the column `isbn` to
-books.
+Add columns for macro-nutrients to ingredients.
 
 ## Changing the Data in Rows of a Table
 
@@ -357,7 +348,7 @@ Let's update some patients' weights.
 
 ### Lab: UPDATE
 
-Update macro-nutrients for some ingredients then isbn for some books.
+Update macro-nutrients for some ingredients.
 
 ## Removing Rows from a Table
 
