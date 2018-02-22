@@ -86,9 +86,13 @@ We'll be using **[PostgreSQL](https://www.postgresql.org/)**, a popular open
 source database server, which should already be installed on your computer.
 
 _On Macs_ you can run `brew services list` to see if PostgreSQL is running.
+- If the server isn't running, `status` not `started`, please start it using
+`brew services start postgresql`.
 
-If the server isn't running, `status` not `started`, please start it using `brew
-services start postgresql`.
+_On Linux_ `service --status-all | grep postgresql` to check if it's running.
+(it will return [ + ] if it's running and [ - ] if it's not.
+- To start it if it's not running, do `sudo service postgresql start`.
+
 
 ## Code along: CREATE DATABASE
 
