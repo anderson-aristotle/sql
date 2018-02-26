@@ -86,9 +86,13 @@ We'll be using **[PostgreSQL](https://www.postgresql.org/)**, a popular open
 source database server, which should already be installed on your computer.
 
 _On Macs_ you can run `brew services list` to see if PostgreSQL is running.
+- If the server isn't running, `status` not `started`, please start it using
+`brew services start postgresql`.
 
-If the server isn't running, `status` not `started`, please start it using `brew
-services start postgresql`.
+_On Linux_ `service --status-all | grep postgresql` to check if it's running.
+(it will return [ + ] if it's running and [ - ] if it's not.
+- To start it if it's not running, do `sudo service postgresql start`.
+
 
 ## Code along: CREATE DATABASE
 
@@ -248,13 +252,8 @@ Create a table to hold information about ingredients. Use the first row of
 `data/ingredients.csv` for the names of the columns other than `id`. Use
 `scripts/cookbook/000_create_table_ingredients.sql` to store the SQL statement.
 
-## Adding Rows to a Table
+## Bulk load data
 
--   [Inserting Data](https://www.postgresql.org/docs/9.6/static/dml-insert.html)
-    \- overview of adding rows to a table.
--   [INSERT](https://www.postgresql.org/docs/9.6/static/sql-insert.html)
-    \- detailed documentation of PostgreSQL's version of the SQL `INSERT INTO`
-    command.
 -   [COPY](https://www.postgresql.org/docs/9.6/static/sql-copy.html)
     \- detailed documentation of PostgreSQL's `COPY` command for loading data
     in bulk.
@@ -265,28 +264,31 @@ rather we'll use `psql`'s meta-command `\copy` allowing us to load data relative
 to where we run `psql`. Bulk loading is something available with most RDBMSs,
 but the specific commands and capabilities vary.
 
-### Demonstration: INSERT INTO and COPY
-
-First we'll use variations of `INSERT` to add a few rows to books. We'll store
-the the commands in `scripts/library/010_insert_into_books.sql`.
+### Demonstration: COPY
 
 Note that string literals in SQL statements are delimited by single quotes, i.e.
 `'`. To include a single quote in a string literal, double it, e.g. `'That''s
 interesting'`. This is not an issue when loading from a valid CSV file using
 PostgreSQL's `COPY` command or psql's `\copy` command.
 
-Next we'll load data in bulk from `data/books.csv` using `\copy`. We'll store
+Now we'll load data in bulk from `data/books.csv` using `\copy`. We'll store
 that command in `scripts/library/020_bulk_load_books.psql`
 
-### Code along: INSERT INTO and COPY
+### Code along: COPY
 
-Together we'll add a few rows to patients then we'll bulk load
-`data/people.csv`.
+Together we'll bulk load `data/people.csv`.
 
-### Lab: INSERT INTO and COPY
+### Lab: COPY
 
-Add an ingredient to the `ingredients` table using `INSERT` then bulk load
-`data/ingredients.csv`.
+Bulk load `data/ingredients.csv`.
+
+## Adding Rows to a Table
+
+-   [Inserting Data](https://www.postgresql.org/docs/9.6/static/dml-insert.html)
+    \- overview of adding rows to a table.
+-   [INSERT](https://www.postgresql.org/docs/9.6/static/sql-insert.html)
+    \- detailed documentation of PostgreSQL's version of the SQL `INSERT INTO`
+    command.
 
 ## Retrieving rows from a table
 
@@ -310,6 +312,27 @@ Together we'll build a query to get the count of patients by gender.
 ### Lab: SELECT
 
 Write a query to get the count of ingredients by unit.
+
+## Removing Rows from a Table
+
+-   [Deleting Data](https://www.postgresql.org/docs/9.6/static/dml-delete.html)
+    \- overview of removing rows from a table
+-   [DELETE](https://www.postgresql.org/docs/9.6/static/sql-delete.html) -
+    detailed documentation of PostgreSQL's version of the SQL `DELETE` command.
+-   [TRUNCATE](https://www.postgresql.org/docs/9.6/static/sql-truncate.html) -
+    detailed documentation of PostgreSQL's `TRUNCATE` command.
+
+#### Code along: DELETE
+
+Let's remove the patients who's given and family names start with the same
+letter.
+
+Note, `TRUNCATE <table name>;` is functionally equivalent to `DELETE FROM <table
+name>;`, it will remove all the rows from the table.
+
+#### Lab: DELETE
+
+Remove ingredients you wouldn't keep in your kitchen or pantry.
 
 ## Changing the Structure of a Table
 
@@ -350,26 +373,18 @@ Let's update some patients' weights.
 
 Update macro-nutrients for some ingredients.
 
-## Removing Rows from a Table
+### Demonstration: INSERT INTO
 
--   [Deleting Data](https://www.postgresql.org/docs/9.6/static/dml-delete.html)
-    \- overview of removing rows from a table
--   [DELETE](https://www.postgresql.org/docs/9.6/static/sql-delete.html) -
-    detailed documentation of PostgreSQL's version of the SQL `DELETE` command.
--   [TRUNCATE](https://www.postgresql.org/docs/9.6/static/sql-truncate.html) -
-    detailed documentation of PostgreSQL's `TRUNCATE` command.
+First we'll use variations of `INSERT` to add a few rows to books. We'll store
+the the commands in `scripts/library/010_insert_into_books.sql`.
 
-#### Code along: DELETE
+### Code along: INSERT INTO
 
-Let's remove the patients who's given and family names start with the same
-letter.
+Together we'll add a few rows to patients.
 
-Note, `TRUNCATE <table name>;` is functionally equivalent to `DELETE FROM <table
-name>;`, it will remove all the rows from the table.
+### Lab: INSERT INTO
 
-#### Lab: DELETE
-
-Remove ingredients you wouldn't keep in your kitchen or pantry.
+Add an ingredient to the `ingredients` table using `INSERT`.
 
 ## Additional Resources
 
