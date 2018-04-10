@@ -281,14 +281,6 @@ Together we'll bulk load `data/people.csv`.
 
 Bulk load `data/ingredients.csv`.
 
-## Adding Rows to a Table
-
--   [Inserting Data](https://www.postgresql.org/docs/9.6/static/dml-insert.html)
-    \- overview of adding rows to a table.
--   [INSERT](https://www.postgresql.org/docs/9.6/static/sql-insert.html)
-    \- detailed documentation of PostgreSQL's version of the SQL `INSERT INTO`
-    command.
-
 ## Retrieving rows from a table
 
 This is about the _query_ part of Structured _Query_ Language. Query statements
@@ -371,6 +363,14 @@ Let's update some patients' weights.
 ### Lab: UPDATE
 
 Update macro-nutrients for some ingredients.
+
+## Adding Rows to a Table
+
+-   [Inserting Data](https://www.postgresql.org/docs/9.6/static/dml-insert.html)
+    \- overview of adding rows to a table.
+-   [INSERT](https://www.postgresql.org/docs/9.6/static/sql-insert.html)
+    \- detailed documentation of PostgreSQL's version of the SQL `INSERT INTO`
+    command.
 
 ### Demonstration: INSERT INTO
 
