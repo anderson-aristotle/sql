@@ -389,6 +389,7 @@ Add an ingredient to the `ingredients` table using `INSERT`.
 
 -   [SQL Wikipedia article](https://en.wikipedia.org/wiki/SQL)
 -   [Books.csv source] (https://en.wikipedia.org/wiki/List_of_best-selling_books#List_of_best-selling_single-volume_books)
+-  [Select Star SQL] (https://selectstarsql.com/)
 
 ## [License](LICENSE)
 
