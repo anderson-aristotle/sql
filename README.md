@@ -44,7 +44,7 @@ data in a tabular form.
 
 Spreadsheets are a good analogy. Individual sheets as tables and the whole
 spreadsheet as a database. See **[this
-link](https://docs.google.com/spreadsheets/d/11oSk85me0klRDfa6o7OfkzMVnvOuhxsF9W-bQEPP5wk/edit?usp=sharing)**
+link](https://docs.google.com/spreadsheets/d/19rHAb5JW3m25gCxh_WhFqJmYC59gLd0Gt5TZtu7al8E/edit#gid=0)**
 for an example.
 
 Why is this important?
@@ -298,7 +298,7 @@ Let's see some what we can learn about the books in the database.
 
 ### Code along: SELECT
 
-Together we'll build a query to get the count of patients by gender.
+Together we'll build a query to get the count of patients born after 1999.
 
 ### Lab: SELECT
 
