@@ -4,26 +4,26 @@
 
 ## Prerequisites
 
--   A working **[PostgreSQL](https://www.postgresql.org/)** installation.
--   [SQL Study](https://git.generalassemb.ly/ga-wdi-boston/sql-study)
+- A working **[PostgreSQL](https://www.postgresql.org/)** installation.
+- [SQL Study](https://git.generalassemb.ly/ga-wdi-boston/sql-study)
 
 ## Objectives
 
 By the end of this, developers should be able to:
 
--   Create a database table
--   Insert a row or rows into a database table
--   Retrieve a row or rows from a database table
--   Modify a database table after creation
--   Update a row or rows in a database table
--   Delete a row or rows from a database table
+- Create a database table
+- Insert a row or rows into a database table
+- Retrieve a row or rows from a database table
+- Modify a database table after creation
+- Update a row or rows in a database table
+- Delete a row or rows from a database table
 
 ## Preparation
 
-1.  Fork and clone this repository.
+1. Fork and clone this repository.
     [FAQ](https://git.generalassemb.ly/ga-wdi-boston/meta/wiki/ForkAndClone)
-1.  Create a new branch, `training`, for your work.
-1.  Checkout to the `training` branch.
+1. Create a new branch, `training`, for your work.
+1. Checkout to the `training` branch.
 
 ## Instructions
 
@@ -85,13 +85,14 @@ We'll be using **[PostgreSQL](https://www.postgresql.org/)**, a popular open
 source database server, which should already be installed on your computer.
 
 _On Macs_ you can run `brew services list` to see if PostgreSQL is running.
+
 - If the server isn't running, `status` not `started`, please start it using
-`brew services start postgresql`.
+  `brew services start postgresql`.
 
 _On Linux_ `service --status-all | grep postgresql` to check if it's running.
 (it will return [ + ] if it's running and [ - ] if it's not.
-- To start it if it's not running, do `sudo service postgresql start`.
 
+- To start it if it's not running, do `sudo service postgresql start`.
 
 ## Code along: CREATE DATABASE
 
@@ -178,10 +179,10 @@ sql-crud=>
 
 Let's look at some of the help for `psql` commands.
 
--   `\l` lists all the databases created on the server we're connected to.
--   `\d` (and its variations) shows information about the
+- `\l` lists all the databases created on the server we're connected to.
+- `\d` (and its variations) shows information about the
  objects in the current database.
--   `\i` reads commands from a file
+- `\i` reads commands from a file
 
 Now let's make sure we're in the right database:
 
@@ -205,14 +206,14 @@ We create a table to define the names and types of data we want to store.
 PostgreSQL's documentation is extensive and excellent, and we'll want to make
 use of it throughout the lesson.
 
--   [Table basics](https://www.postgresql.org/docs/9.6/static/ddl-basics.html)
+- [Table basics](https://www.postgresql.org/docs/9.6/static/ddl-basics.html)
     \- a brief overview of tables in an RDBMS.
--   [Data Types](https://www.postgresql.org/docs/9.6/static/datatype.html)
+- [Data Types](https://www.postgresql.org/docs/9.6/static/datatype.html)
     \- the data types available in PostgreSQL.
--   [CREATE TABLE](https://www.postgresql.org/docs/9.6/static/sql-createtable.html)
+- [CREATE TABLE](https://www.postgresql.org/docs/9.6/static/sql-createtable.html)
     \- detailed documentation of PostgreSQL's version of the SQL `CREATE TABLE`
     command.
--   [DROP TABLE](https://www.postgresql.org/docs/9.6/static/sql-droptable.html)
+- [DROP TABLE](https://www.postgresql.org/docs/9.6/static/sql-droptable.html)
     \- detailed documentation of PostgreSQL's version of the SQL `DROP TABLE`
     command.
 
@@ -253,7 +254,7 @@ Create a table to hold information about ingredients. Use the first row of
 
 ## Bulk load data
 
--   [COPY](https://www.postgresql.org/docs/9.6/static/sql-copy.html)
+- [COPY](https://www.postgresql.org/docs/9.6/static/sql-copy.html)
     \- detailed documentation of PostgreSQL's `COPY` command for loading data
     in bulk.
 
@@ -287,9 +288,9 @@ This is about the _query_ part of Structured _Query_ Language. Query statements
 can run from almost trivial to highly complex. They provide a mechanism to
 retrieve and summarize the data in your database.
 
--   [Queries](https://www.postgresql.org/docs/9.6/static/queries.html) - TOC
+- [Queries](https://www.postgresql.org/docs/9.6/static/queries.html) - TOC
     of the Queries section of PostgreSQL's documentation for `The SQL Language`.
--   [SELECT](https://www.postgresql.org/docs/9.6/static/sql-select.html) -
+- [SELECT](https://www.postgresql.org/docs/9.6/static/sql-select.html) -
     detailed documentation of PostgreSQL's version of the SQL `SELECT` command.
 
 ### Demonstration: SELECT
@@ -306,14 +307,14 @@ Write a query to get the count of ingredients by unit.
 
 ## Removing Rows from a Table
 
--   [Deleting Data](https://www.postgresql.org/docs/9.6/static/dml-delete.html)
+- [Deleting Data](https://www.postgresql.org/docs/9.6/static/dml-delete.html)
     \- overview of removing rows from a table
--   [DELETE](https://www.postgresql.org/docs/9.6/static/sql-delete.html) -
+- [DELETE](https://www.postgresql.org/docs/9.6/static/sql-delete.html) -
     detailed documentation of PostgreSQL's version of the SQL `DELETE` command.
--   [TRUNCATE](https://www.postgresql.org/docs/9.6/static/sql-truncate.html) -
+- [TRUNCATE](https://www.postgresql.org/docs/9.6/static/sql-truncate.html) -
     detailed documentation of PostgreSQL's `TRUNCATE` command.
 
-#### Code along: DELETE
+### Code along: DELETE
 
 Let's remove the patients who's given and family names start with the same
 letter.
@@ -321,15 +322,15 @@ letter.
 Note, `TRUNCATE <table name>;` is functionally equivalent to `DELETE FROM <table
 name>;`, it will remove all the rows from the table.
 
-#### Lab: DELETE
+### Lab: DELETE
 
 Remove ingredients you wouldn't keep in your kitchen or pantry.
 
 ## Changing the Structure of a Table
 
--   [Modifying Tables](https://www.postgresql.org/docs/9.6/static/ddl-alter.html)
+- [Modifying Tables](https://www.postgresql.org/docs/9.6/static/ddl-alter.html)
     \- overview of changing tables.
--   [ALTER TABLE](https://www.postgresql.org/docs/9.6/static/sql-altertable.html)
+- [ALTER TABLE](https://www.postgresql.org/docs/9.6/static/sql-altertable.html)
     \- detailed documentation of PostgreSQL's version of the SQL `ALTER TABLE`
     command.
 
@@ -347,9 +348,9 @@ Add columns for macro-nutrients to ingredients.
 
 ## Changing the Data in Rows of a Table
 
--   [Updating Data](https://www.postgresql.org/docs/9.6/static/dml-update.html)
+- [Updating Data](https://www.postgresql.org/docs/9.6/static/dml-update.html)
     \- overview of changing rows
--   [UPDATE](https://www.postgresql.org/docs/9.6/static/sql-update.html) -
+- [UPDATE](https://www.postgresql.org/docs/9.6/static/sql-update.html) -
     detailed documentation of PostgreSQL's version of the SQL `UPDATE` command.
 
 ### Demonstration: UPDATE
@@ -366,9 +367,9 @@ Update macro-nutrients for some ingredients.
 
 ## Adding Rows to a Table
 
--   [Inserting Data](https://www.postgresql.org/docs/9.6/static/dml-insert.html)
+- [Inserting Data](https://www.postgresql.org/docs/9.6/static/dml-insert.html)
     \- overview of adding rows to a table.
--   [INSERT](https://www.postgresql.org/docs/9.6/static/sql-insert.html)
+- [INSERT](https://www.postgresql.org/docs/9.6/static/sql-insert.html)
     \- detailed documentation of PostgreSQL's version of the SQL `INSERT INTO`
     command.
 
@@ -387,12 +388,12 @@ Add an ingredient to the `ingredients` table using `INSERT`.
 
 ## Additional Resources
 
--   [SQL Wikipedia article](https://en.wikipedia.org/wiki/SQL)
--   [Books.csv source] (https://en.wikipedia.org/wiki/List_of_best-selling_books#List_of_best-selling_single-volume_books)
--  [Select Star SQL] (https://selectstarsql.com/)
+- [SQL Wikipedia article](https://en.wikipedia.org/wiki/SQL)
+- [Books.csv source](https://en.wikipedia.org/wiki/List_of_best-selling_books#List_of_best-selling_single-volume_books)
+- [Select Star SQL](https://selectstarsql.com/)
 
 ## [License](LICENSE)
 
-1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
-1.  All software code is licensed under GNU GPLv3. For commercial use or
+1. All content is licensed under a CC­BY­NC­SA 4.0 license.
+1. All software code is licensed under GNU GPLv3. For commercial use or
     alternative licensing, please contact legal@ga.co.
