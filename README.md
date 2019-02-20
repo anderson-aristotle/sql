@@ -97,7 +97,7 @@ _On Linux_ `service --status-all | grep postgresql` to check if it's running.
 ## Code along: CREATE DATABASE
 
 We'll use `sql-crud` as the database to hold our tables and
-**[psql](https://www.postgresql.org/docs/9.6/static/app-psql.html)** to
+**[psql](https://www.postgresql.org/docs/11/app-psql.html)** to
 interact with it.  `psql` is PostgreSQL's command line client which lets us
 execute SQL commands interactively (REPL-like) and from scripts.  It also has
 some built in commands we'll find useful.
@@ -109,9 +109,9 @@ $
 ```
 
 But first we need to create the database.  We'll use the **[CREATE
-DATABASE](https://www.postgresql.org/docs/9.6/static/sql-createdatabase.html)**
+DATABASE](https://www.postgresql.org/docs/11/sql-createdatabase.html)**
 command from within `psql`.  This is a
-**[SQL](https://www.postgresql.org/docs/9.6/static/sql.html)** _(Structure
+**[SQL](https://www.postgresql.org/docs/11/sql.html)** _(Structure
 Query Language - see also the [Wikipedia article](http://en.wikipedia.org/wiki/SQL))_
 command and requires that we wrap the database name in double quotes (i.e.
 `create database "sql-crud";`). A `-` is not allowed as a name character in SQL
@@ -119,7 +119,7 @@ unless the name is surrounded with double-quotes.
 
 If we want to remove a database - be careful, this is unrecoverable - we use the
 [DROP
-DATABASE](https://www.postgresql.org/docs/9.6/static/sql-dropdatabase.html)
+DATABASE](https://www.postgresql.org/docs/11/sql-dropdatabase.html)
 command.
 
 If we run `psql` without a parameter it will connect to our default database,
@@ -130,7 +130,7 @@ psql
 ```
 
 ```sql
- (9.6.1)
+ (11.2)
 Type "help" for help.
 
 and=> CREATE DATABASE "sql-crud";
@@ -155,7 +155,7 @@ psql sql-crud
 ```
 
 ```sql
-psql (9.6.1)
+psql (11.2)
 Type "help" for help.
 
 sql-crud=>
@@ -164,7 +164,7 @@ sql-crud=>
 `psql` has help for both its built-in commands and for SQL.
 
 ```sql
-psql (9.6.1)
+psql (11.2)
 Type "help" for help.
 
 sql-crud=> help
@@ -206,14 +206,14 @@ We create a table to define the names and types of data we want to store.
 PostgreSQL's documentation is extensive and excellent, and we'll want to make
 use of it throughout the lesson.
 
-- [Table basics](https://www.postgresql.org/docs/9.6/static/ddl-basics.html)
+- [Table basics](https://www.postgresql.org/docs/11/ddl-basics.html)
     \- a brief overview of tables in an RDBMS.
-- [Data Types](https://www.postgresql.org/docs/9.6/static/datatype.html)
+- [Data Types](https://www.postgresql.org/docs/11/datatype.html)
     \- the data types available in PostgreSQL.
-- [CREATE TABLE](https://www.postgresql.org/docs/9.6/static/sql-createtable.html)
+- [CREATE TABLE](https://www.postgresql.org/docs/11/sql-createtable.html)
     \- detailed documentation of PostgreSQL's version of the SQL `CREATE TABLE`
     command.
-- [DROP TABLE](https://www.postgresql.org/docs/9.6/static/sql-droptable.html)
+- [DROP TABLE](https://www.postgresql.org/docs/11/sql-droptable.html)
     \- detailed documentation of PostgreSQL's version of the SQL `DROP TABLE`
     command.
 
@@ -254,7 +254,7 @@ Create a table to hold information about ingredients. Use the first row of
 
 ## Bulk load data
 
-- [COPY](https://www.postgresql.org/docs/9.6/static/sql-copy.html)
+- [COPY](https://www.postgresql.org/docs/11/sql-copy.html)
     \- detailed documentation of PostgreSQL's `COPY` command for loading data
     in bulk.
 
@@ -288,9 +288,9 @@ This is about the _query_ part of Structured _Query_ Language. Query statements
 can run from almost trivial to highly complex. They provide a mechanism to
 retrieve and summarize the data in your database.
 
-- [Queries](https://www.postgresql.org/docs/9.6/static/queries.html) - TOC
+- [Queries](https://www.postgresql.org/docs/11/queries.html) - TOC
     of the Queries section of PostgreSQL's documentation for `The SQL Language`.
-- [SELECT](https://www.postgresql.org/docs/9.6/static/sql-select.html) -
+- [SELECT](https://www.postgresql.org/docs/11/sql-select.html) -
     detailed documentation of PostgreSQL's version of the SQL `SELECT` command.
 
 ### Demonstration: SELECT
@@ -307,11 +307,11 @@ Write a query to get the count of ingredients by unit.
 
 ## Removing Rows from a Table
 
-- [Deleting Data](https://www.postgresql.org/docs/9.6/static/dml-delete.html)
+- [Deleting Data](https://www.postgresql.org/docs/11/dml-delete.html)
     \- overview of removing rows from a table
-- [DELETE](https://www.postgresql.org/docs/9.6/static/sql-delete.html) -
+- [DELETE](https://www.postgresql.org/docs/11/sql-delete.html) -
     detailed documentation of PostgreSQL's version of the SQL `DELETE` command.
-- [TRUNCATE](https://www.postgresql.org/docs/9.6/static/sql-truncate.html) -
+- [TRUNCATE](https://www.postgresql.org/docs/11/sql-truncate.html) -
     detailed documentation of PostgreSQL's `TRUNCATE` command.
 
 ### Code along: DELETE
@@ -328,9 +328,9 @@ Remove ingredients you wouldn't keep in your kitchen or pantry.
 
 ## Changing the Structure of a Table
 
-- [Modifying Tables](https://www.postgresql.org/docs/9.6/static/ddl-alter.html)
+- [Modifying Tables](https://www.postgresql.org/docs/11/ddl-alter.html)
     \- overview of changing tables.
-- [ALTER TABLE](https://www.postgresql.org/docs/9.6/static/sql-altertable.html)
+- [ALTER TABLE](https://www.postgresql.org/docs/11/sql-altertable.html)
     \- detailed documentation of PostgreSQL's version of the SQL `ALTER TABLE`
     command.
 
@@ -348,9 +348,9 @@ Add columns for macro-nutrients to ingredients.
 
 ## Changing the Data in Rows of a Table
 
-- [Updating Data](https://www.postgresql.org/docs/9.6/static/dml-update.html)
+- [Updating Data](https://www.postgresql.org/docs/11/dml-update.html)
     \- overview of changing rows
-- [UPDATE](https://www.postgresql.org/docs/9.6/static/sql-update.html) -
+- [UPDATE](https://www.postgresql.org/docs/11/sql-update.html) -
     detailed documentation of PostgreSQL's version of the SQL `UPDATE` command.
 
 ### Demonstration: UPDATE
@@ -367,9 +367,9 @@ Update macro-nutrients for some ingredients.
 
 ## Adding Rows to a Table
 
-- [Inserting Data](https://www.postgresql.org/docs/9.6/static/dml-insert.html)
+- [Inserting Data](https://www.postgresql.org/docs/11/dml-insert.html)
     \- overview of adding rows to a table.
-- [INSERT](https://www.postgresql.org/docs/9.6/static/sql-insert.html)
+- [INSERT](https://www.postgresql.org/docs/11/sql-insert.html)
     \- detailed documentation of PostgreSQL's version of the SQL `INSERT INTO`
     command.
 
