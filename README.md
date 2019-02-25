@@ -219,7 +219,7 @@ use of it throughout the lesson.
 
 Note well, `DROP TABLE` is unrecoverable if it executes successfully.
 
-## Demonstration: CREATE TABLE
+### Code Along: CREATE TABLE
 
 By convention (the one we'll use throughout), tables are named with the
 pluralization of the name of the object whose data they hold. So for example, if
@@ -237,21 +237,6 @@ We'll save the SQL statement to create the books table in
 file using `psql <db-name> --file=<path-to-file>` or from the psql prompt using
 `\i <file>`.
 
-### Code along: CREATE TABLE
-
-Together, we'll create a table to hold information about patients. We'll use the
-first row of `data/people.csv` for the column names.
-
-What data-types should we use for each column?
-
-We'll save the statement in `scripts/clinic/000_create_table_patients.sql`
-
-### Lab: CREATE TABLE
-
-Create a table to hold information about ingredients. Use the first row of
-`data/ingredients.csv` for the names of the columns other than `id`. Use
-`scripts/cookbook/000_create_table_ingredients.sql` to store the SQL statement.
-
 ## Bulk load data
 
 - [COPY](https://www.postgresql.org/docs/11/sql-copy.html)
@@ -264,7 +249,7 @@ rather we'll use `psql`'s meta-command `\copy` allowing us to load data relative
 to where we run `psql`. Bulk loading is something available with most RDBMSs,
 but the specific commands and capabilities vary.
 
-### Demonstration: COPY
+### Code Along: COPY
 
 Note that string literals in SQL statements are delimited by single quotes, i.e.
 `'`. To include a single quote in a string literal, double it, e.g. `'That''s
@@ -273,14 +258,6 @@ PostgreSQL's `COPY` command or psql's `\copy` command.
 
 Now we'll load data in bulk from `data/books.csv` using `\copy`. We'll store
 that command in `scripts/library/020_bulk_load_books.psql`
-
-### Code along: COPY
-
-Together we'll bulk load `data/people.csv`.
-
-### Lab: COPY
-
-Bulk load `data/ingredients.csv`.
 
 ## Retrieving rows from a table
 
@@ -293,17 +270,25 @@ retrieve and summarize the data in your database.
 - [SELECT](https://www.postgresql.org/docs/11/sql-select.html) -
     detailed documentation of PostgreSQL's version of the SQL `SELECT` command.
 
-### Demonstration: SELECT
+### Code Along: SELECT
 
-Let's see some what we can learn about the books in the database.
+Let's build some queries to see what we can learn about the books
+in the database.
 
-### Code along: SELECT
+----
 
-Together we'll build a query to get the count of patients born after 1999.
+## Lab: CREATE, COPY, and SELECT
 
-### Lab: SELECT
+**CREATE TABLE:** Create a table to hold information about ingredients.
+Use the first row of `data/ingredients.csv` for the names of the columns
+other than `id`. Use `scripts/cookbook/000_create_table_ingredients.sql` to
+store the SQL statement.
 
-Write a query to get the count of ingredients by unit.
+**COPY:** Bulk load `data/ingredients.csv`.
+
+**SELECT:** Write a query to get the count of ingredients by unit.
+
+----
 
 ## Removing Rows from a Table
 
@@ -322,10 +307,6 @@ letter.
 Note, `TRUNCATE <table name>;` is functionally equivalent to `DELETE FROM <table
 name>;`, it will remove all the rows from the table.
 
-### Lab: DELETE
-
-Remove ingredients you wouldn't keep in your kitchen or pantry.
-
 ## Changing the Structure of a Table
 
 - [Modifying Tables](https://www.postgresql.org/docs/11/ddl-alter.html)
@@ -334,17 +315,9 @@ Remove ingredients you wouldn't keep in your kitchen or pantry.
     \- detailed documentation of PostgreSQL's version of the SQL `ALTER TABLE`
     command.
 
-### Demonstration: ALTER TABLE
+### Code Along: ALTER TABLE
 
 We'll add the column `isbn` to books.
-
-### Code along: ALTER TABLE
-
-We'll change the type of the columns `height` and `weight` in patients.
-
-### Lab: ALTER TABLE
-
-Add columns for macro-nutrients to ingredients.
 
 ## Changing the Data in Rows of a Table
 
@@ -353,17 +326,9 @@ Add columns for macro-nutrients to ingredients.
 - [UPDATE](https://www.postgresql.org/docs/11/sql-update.html) -
     detailed documentation of PostgreSQL's version of the SQL `UPDATE` command.
 
-### Demonstration: UPDATE
+### Code Along: UPDATE
 
 We'll update the isbn for some books.
-
-### Code along: UPDATE
-
-Let's update some patients' weights.
-
-### Lab: UPDATE
-
-Update macro-nutrients for some ingredients.
 
 ## Adding Rows to a Table
 
@@ -373,18 +338,22 @@ Update macro-nutrients for some ingredients.
     \- detailed documentation of PostgreSQL's version of the SQL `INSERT INTO`
     command.
 
-### Demonstration: INSERT INTO
+### Code Along: INSERT INTO
 
 First we'll use variations of `INSERT` to add a few rows to books. We'll store
 the the commands in `scripts/library/010_insert_into_books.sql`.
 
-### Code along: INSERT INTO
+----
 
-Together we'll add a few rows to patients.
+## Lab: DELETE, ALTER, UPDATE, and INSERT
 
-### Lab: INSERT INTO
+**DELETE:** Remove ingredients you wouldn't keep in your kitchen or pantry.
 
-Add an ingredient to the `ingredients` table using `INSERT`.
+**ALTER TABLE:** Add columns for macro-nutrients to ingredients.
+
+**UPDATE:** Update macro-nutrients for some ingredients.
+
+**INSERT INTO:** Add an ingredient to the `ingredients` table using `INSERT`.
 
 ## Additional Resources
 
